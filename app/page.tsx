@@ -87,11 +87,12 @@ export default function GifCreator() {
 
       {resultUrl && (
         <div className="mt-3">
-          <p className="mb-2">完成したGIF:</p>
+          
           <a href={resultUrl} download="test.gif" className="px-6 py-3 font-bold bg-indigo-600 text-white rounded-lg  cursor-pointer ">
             ダウンロードする
           </a>
-          <img src={resultUrl} alt="Generated GIF" className="mt-5 mx-auto border shadow-xl w-3/10"/>
+          <p className="mt-3">完成したGIF:</p>
+          <img src={resultUrl} alt="Generated GIF" className="mt-2 mx-auto border shadow-xl w-3/10"/>
           <br />
           
         </div>
