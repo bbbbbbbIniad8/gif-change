@@ -35,7 +35,7 @@ export default function GifCreator() {
       ctx.drawImage(image, 0, 0);
       const imageData = ctx.getImageData(0, 0, width, height);
 
-      for(let i:number=0; i < 1; i++){
+      for(let i:number=0; i < 2; i++){
         frames.push({ 
         data: imageData.data, 
         delay: 1000 
@@ -71,24 +71,29 @@ export default function GifCreator() {
 
   return (
     <div className="p-10 text-center">
+      <label className={`px-6 py-3 bg-indigo-600 text-white rounded-lg font-bold cursor-pointer 
+        ${loading ? 'bg-gray-400' : 'hover:bg-indigo-700'}`}>
+      画像を選択
       <input
         type="file"
         onChange={run}
         disabled={loading}
-        className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-bold disabled:bg-gray-400"
+        className="hidden"
       >
       </input>
+      </label>
 
-      <p className="">{loading ? "生成中..." : "3色のGIFを作る（テスト）"}</p>
+      <p className="p-5 font-bold">{loading ? "生成中..." : "AI対策のために画像をGIFにする"}</p>
 
       {resultUrl && (
-        <div className="mt-10">
-          <p className="mb-4">完成したGIF:</p>
-          <img src={resultUrl} alt="Generated GIF" className="mx-auto border shadow-xl" />
-          <br />
-          <a href={resultUrl} download="test.gif" className="text-indigo-600 underline">
+        <div className="mt-3">
+          <p className="mb-2">完成したGIF:</p>
+          <a href={resultUrl} download="test.gif" className="px-6 py-3 font-bold bg-indigo-600 text-white rounded-lg  cursor-pointer ">
             ダウンロードする
           </a>
+          <img src={resultUrl} alt="Generated GIF" className="mt-5 mx-auto border shadow-xl w-3/10"/>
+          <br />
+          
         </div>
       )}
     </div>
