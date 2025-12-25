@@ -94,16 +94,20 @@ export default function GifCreator() {
   };
 
   return (
-    <div className="p-10 text-center">
+    <div className="text-center flex flex-col items-center">
+      <h1 className="p-10 font-semibold w-screen text-3xl
+      orange-500 text-white bg-orange-500">AI編集対策のために画像をGIFにする</h1>
       <div
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        className={`border-2 border-dashed rounded-xl p-10 transition-colors
+        className={`border-2 border-dashed rounded-xl py-10 transition-colors w-1/2 my-5
           ${isDragging ? "border-indigo-500 bg-indigo-50" : "border-gray-300"}
           ${loading ? "opacity-50 cursor-not-allowed" : "cursor-pointer"}`}
       >
-        <label className={`px-6 py-3 bg-indigo-600 text-white rounded-lg font-bold cursor-pointer 
+        
+        <label className={`px-6 py-3 bg-indigo-600 text-white rounded-lg
+         font-bold cursor-pointer 
           ${loading ? 'bg-gray-400' : 'hover:bg-indigo-700'}`}>
           画像を選択
           <input
@@ -118,7 +122,7 @@ export default function GifCreator() {
       </div>
 
       <p className="p-5 font-bold">
-        {loading ? "生成中..." : "AI編集対策のために画像をGIFにする"}
+        {loading ? "生成中..." : ""}
       </p>
 
       {resultUrl && (
