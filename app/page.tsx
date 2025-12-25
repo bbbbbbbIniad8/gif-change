@@ -83,7 +83,7 @@ export default function GifCreator() {
       </input>
       </label>
 
-      <p className="p-5 font-bold">{loading ? "生成中..." : "AI対策のために画像をGIFにする"}</p>
+      <p className="p-5 font-bold">{loading ? "生成中..." : "AI編集対策のために画像をGIFにする"}</p>
 
       {resultUrl && (
         <div className="mt-3">
